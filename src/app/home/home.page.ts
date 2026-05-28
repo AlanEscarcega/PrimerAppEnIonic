@@ -1,36 +1,42 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCardSubtitle, IonButton }
+import { CommonModule } from '@angular/common';
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent,
+  IonCard, IonCardContent, IonCardHeader,
+  IonCardTitle, IonCardSubtitle, IonButton
+} from '@ionic/angular/standalone';
 
-  from '@ionic/angular/standalone';
 import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCardSubtitle, IonButton],
+  imports: [
+    CommonModule,
+    IonHeader, IonToolbar, IonTitle, IonContent,
+    IonCard, IonCardContent, IonCardHeader,
+    IonCardTitle, IonCardSubtitle, IonButton
+  ],
 })
 export class HomePage {
 
   tasks: Task[] = [
     {
-      id: 1, titulo: 'Configuracion de Ionic',
-      descripcion: 'Instalar Node.js, AngularCLI',
-      finalizado: true,
-      prioridad: 'Alta'
-
+      id: 1,
+      title: 'Configuracion de Ionic',
+      description: 'Instalar Node.js, Angular CLI',
+      completed: true,
+      priority: 'high'
     },
-
     {
       id: 2,
-      titulo: 'Crear app tasklist',
-      descripcion: 'Desarrollar la interfaz de la pagina principal',
-      finalizado: false,
-      prioridad: 'Alta'
+      title: 'Crear app tasklist',
+      description: 'Desarrollar la interfaz de la pagina principal',
+      completed: false,
+      priority: 'high'
     }
-
   ];
-
 
   constructor() {
     console.log(this.tasks);

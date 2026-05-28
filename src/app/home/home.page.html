@@ -5,19 +5,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
+
+  <ion-card *ngFor="let task of tasks">
     <ion-card-header>
-      <ion-card-title>Desarrollo de Apps Moviles</ion-card-title>
-      <ion-card-subtitle>Trabajando con Ionic</ion-card-subtitle>
+      <ion-card-title>{{ task.title }}</ion-card-title>
+      <ion-card-subtitle>{{ task.priority }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      Este es el contenido de la tarjeta.
+      {{ task.description }}
     </ion-card-content>
 
     <ion-card-content>
+      Completado: {{ task.completed }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
       <ion-button (click)="saludar()">Aceptar</ion-button>
     </ion-card-content>
-
   </ion-card>
+
 </ion-content>
