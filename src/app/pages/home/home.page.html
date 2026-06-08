@@ -1,0 +1,21 @@
+<!--
+Nombre: Alan Escarcega
+Matricula: 23030680
+fecha: 8/6/2026
+-->
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>TaskMaster v2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input placeholder="Ingresa una nueva tarea" name="task" [(ngModel)]="newTaskStr">
+    </ion-input>
+    <ion-button><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+  </ion-item>
+</ion-content>

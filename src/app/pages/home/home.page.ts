@@ -5,10 +5,13 @@ import {
   IonHeader, IonToolbar, IonTitle, IonContent,
   IonCard, IonCardContent, IonCardHeader,
   IonCardTitle, IonCardSubtitle, IonButton,
-  IonItem, IonLabel, IonInput, IonList,
+  IonItem, IonLabel, IonInput, IonList, IonIcon
 } from '@ionic/angular/standalone';
 
-import { Task } from '../models/task.model';
+import { Task } from '../../models/task.model';
+import { addIcons } from 'ionIcons';
+import { addOutline, addCircleOutline } from 'ionicons/icons';
+
 
 @Component({
   selector: 'app-home',
@@ -20,7 +23,7 @@ import { Task } from '../models/task.model';
     IonHeader, IonToolbar, IonTitle, IonContent,
     IonCard, IonCardContent, IonCardHeader,
     IonCardTitle, IonCardSubtitle, IonButton,
-    IonItem, IonLabel, IonInput, IonList, IonItem
+    IonItem, IonLabel, IonInput, IonList, IonItem, IonIcon
   ],
 })
 export class HomePage {
@@ -32,8 +35,11 @@ export class HomePage {
   ];
 
   constructor() {
+
+    addIcons({ addOutline, addCircleOutline });
     console.log(this.tasks);
   }
+
 
   addTask() {
     console.log(this.newTaskStr);
